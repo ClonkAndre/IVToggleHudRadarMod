@@ -3,8 +3,10 @@ using System.Windows.Forms;
 
 using IVSDKDotNet;
 
-namespace IVToggleHudRadar {
-    public class Main : Script {
+namespace IVToggleHudRadar
+{
+    public class Main : Script
+    {
 
         #region Variables
         private Keys toggleKey;
@@ -27,15 +29,15 @@ namespace IVToggleHudRadar {
         {
             if (e.KeyCode == toggleKey)
             {
-                if (CMenuManager.Display.RadarMode == 0)
+                if (IVMenuManager.RadarMode == 0)
                 {
-                    CMenuManager.Display.RadarMode = 1;
-                    CMenuManager.Display.HudOn = 1;
+                    IVMenuManager.RadarMode = 1;
+                    IVMenuManager.HudOn = true;
                 }
                 else
                 {
-                    CMenuManager.Display.RadarMode = 0;
-                    CMenuManager.Display.HudOn = 0;
+                    IVMenuManager.RadarMode = 0;
+                    IVMenuManager.HudOn = false;
                 }
             }
         }
